@@ -533,7 +533,7 @@ li.selected:hover{
     height: 100%;
     padding-left: 64px;
     padding-right: 64px;
-    background-image: url('/img/bg.png');
+    background-image: url('./img/bg.png');
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 3;
