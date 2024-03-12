@@ -1,0 +1,87 @@
+/* medium */
+@font-face {
+    font-family: 'GraphikLCG medium';
+    src: url(./font/Graphik-Medium-Web.ttf);
+}
+/* Базовые стили для всего виджета */
+.Tabs {
+    display: block;
+    color: #1B1B1B;
+    
+}
+
+/* Внутренние отступы и граница для области содержимого */
+.Tabs__content {
+    padding-top: 64px;
+    max-width: 904px;
+}
+.row{
+    display: flex;
+    gap: 32px;
+    padding-bottom: 48px;
+}
+.row_p{
+    width: 280px;
+    color: #7D7D7D;
+}
+.row .p_16{
+    padding-bottom: 0px;
+}
+.p_row{
+    font-size: 14px;
+    line-height: 20px;
+    color: #1B1B1B;
+}
+/* Скрываем радиокнопки */
+.Tabs__tab {
+    display: none;
+}
+
+/* По умолчанию область контента каждой конкретной вкладки скрыта */
+.Tabs__area {
+    display: none;
+}
+
+/* Стили для параграфа внутри области контента */
+.Tabs__area table {
+    margin-bottom: 20px;
+}
+
+/* Стилизация одной вкладки */
+.Tabs__label {
+    font-family: 'GraphikLCG medium';
+    font-size: 16px;
+    margin-right: 32px;
+    line-height: 24px;
+    display: inline-block;
+    color:#7D7D7D;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    position: relative;
+}
+.Tabs__label:before{
+    content: " ";
+    background: #CBCBCC;
+    width: 902px;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+}
+/* Изменение цвета вкладки при наведении курсора */
+.Tabs__label:hover {
+    color: #1B1B1B;
+}
+
+/* Меням цвет вкладки, если она выбрана */
+.Tabs__tab:checked + .Tabs__label {
+    color: #1B1B1B;
+    border-bottom-color: #3E29E3;
+}
+
+/* Если конкретная вкладка (радиокнопка) выбрана, то ищем соседний элемент с классом .Tabs__content, 
+в котором отображаем блок с data-атрибутом, соответствующим id активной вкладки */
+.Tabs #Tab-1:checked ~ .Tabs__content .Tabs__area[data-tab="Tab-1"],
+.Tabs #Tab-2:checked ~ .Tabs__content .Tabs__area[data-tab="Tab-2"]{
+    display: block;
+}
